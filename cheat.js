@@ -1,5 +1,5 @@
 const {  Client, Events , GatewayIntentBits, Collection,  EmbedAssertions, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle  } = require("discord.js");
-
+const {tknCheet} = require('./tkn.js')
 let temp;
 var rndit = 0;
 var zahl = 0;
@@ -33,7 +33,7 @@ const client = new Client({
   
   
   
-  const token = 'MTA2MTMyNzM2ODcyNTIwNTAyMg.GhiCvF.cLUJZRnvXU61jsZnqaUpoVw73R6T70oxcTOxIk';
+  const token = tknCheet;
   const prefix = '-';
   const fs = require('fs');
   client.commands = new Collection();

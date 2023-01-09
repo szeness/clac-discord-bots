@@ -1,6 +1,6 @@
 const { channel } = require("diagnostics_channel");
 const { Client, Events , GatewayIntentBits, Collection, createChannel, EmbedAssertions, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle  } = require("discord.js");
-
+const { tknLac } = require('./tkn.js');
 let temp;
 var c = 0;
 var zahl = 0;
@@ -49,7 +49,7 @@ const client = new Client({
 
 
 
-const token = 'MTA0OTQ2OTI3MDY3NDkxMTI5NA.GfPReG.jq401v0wyWfyMTBMGZIIPU4wk_sN41o5-h-Tro';
+const token = tknLac;
 const prefix = '-';
 const fs = require('fs');
 const { measureMemory } = require("vm");
