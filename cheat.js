@@ -1,7 +1,7 @@
 const {  Client, Events , GatewayIntentBits, Collection,  EmbedAssertions, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle  } = require("discord.js");
 const {tknCheet} = require('./tkn.js')
 const https = require("https") 
-var dir = require('node-dir');
+
 
    
 const {getVoiceConnection,AudioPlayerStatus,createAudioPlayer,createAudioResource,joinVoiceChannel,AudioPlayer,} = require('@discordjs/voice');
@@ -41,46 +41,12 @@ const client = new Client({
   const token = tknCheet
   const prefix = '-';
   const fs = require('fs');
+const path = require("path");
+const { PassThrough } = require("stream");
   client.commands = new Collection();
 
- 
 
-
-  {
-  
-  client.once("ready", async () => {
-
-     console.log(`cheetah bot is on ${client.user.tag}!`)
-
-    /*  path  = "./fufu/";
-     filenames = fs.readdirSync(path);
-
-     
-     filenames.forEach(function(element) {
-      console.log(element);
-    
-     });
- */
- 
-    /*  console.log(filenames[1]) */
-
-     const guild = await client.guilds.fetch('1044558924289937418');
-     const channel = guild.channels.cache.get('1061329103103475772');
-     messageEnysS2 = await channel.messages.fetch('1061336342082113678');  
-    const dumChan =await  guild.channels.cache.get('1056762157259292743');
-
-     const channelPics =await  guild.channels.cache.get('1054207268884856965');
-     const channeluni =await  guild.channels.cache.get('1044558924289937420');
-
-    
-     
-    
-   /*   dumChan.send("My Bot's message", {files: [{attachment: path.concat(filenames[1])}, */
-   /*  ]}); */
-
-    
-
-/* 
+  /* 
      async function lots_of_messages_getter(channel, limit = 10000) {
 
       const sum_messages = [];
@@ -127,6 +93,52 @@ messPics.forEach(message => {
       });
   }); */
  
+
+ 
+
+
+  {
+  
+  client.once("ready", async () => {
+
+     console.log(`cheetah bot is on ${client.user.tag}!`)
+
+
+
+     const guild = await client.guilds.fetch('1044558924289937418');
+     const channel = guild.channels.cache.get('1061329103103475772');
+     messageEnysS2 = await channel.messages.fetch('1061336342082113678');  
+     const dumChan =await  guild.channels.cache.get('1063155191244935299');
+
+     const channelPics =await  guild.channels.cache.get('1054207268884856965');
+     const channeluni =await  guild.channels.cache.get('1044558924289937420');
+
+    
+
+         /*  let pathR  = "./images/uniarch/";
+     filenames = fs.readdirSync(pathR);
+
+     
+     filenames.forEach(function(element) {
+      console.log(element);
+    
+     });
+  */
+ 
+    /*  console.log(filenames[1]) */
+     
+   /*  for (let i = 0; i < filenames.length; i++) {
+
+     
+      await dumChan.send({
+          files: [{
+            attachment: pathR+filenames[i],
+            name: filenames[i],
+            description: 'none des'
+          }]
+        })
+      }
+ */
 
 
 
@@ -324,7 +336,7 @@ messPics.forEach(message => {
 
 
 
-  
+  var counterfiles = 0;
 
   client.on('messageCreate' , async (msg) => {
 
@@ -332,14 +344,14 @@ messPics.forEach(message => {
       msg.attachments.forEach(attachment => {         
           const url = attachment.url;
           var strname = attachment.name.split('');
-          strname.splice((strname.length-6), 0 ,i.toString())
+          strname.splice((strname.length-7), 0 ,counterfiles.toString())
 
-          const file = fs.createWriteStream(`images/${strname.join('')}`);
+          const file = fs.createWriteStream(`./images/newims/${strname.join('')}`);
           https.get(url, (response) => {
               response.pipe(file);
           });
       });
-  }
+  }  
 
 
 
@@ -415,7 +427,7 @@ messPics.forEach(message => {
           case 1:  msg.react('🐬'); return;
           case 2:  msg.react('😻'); return;
           case 3:  msg.react('💖'); msg.react('🗡️');return;
-          case 4:  msg.react('🐇');   return;
+          case 4:  msg.react('🐇'); return;
           case 5:  msg.react('🕵️‍♀️'); return;       
         }
        
@@ -424,14 +436,16 @@ messPics.forEach(message => {
         msg.toString().toLowerCase()== ("hey") || msg.toString()== ("hello") ||
          msg.toString().toLowerCase()== ("lac")  || msg.toString().toLowerCase()==("oi") ||
           msg.toString().toLowerCase()==("hey!!")) {
-         const rndInt2 = Math.floor(Math.random() * 5) + 1
+         const rndInt2 = Math.floor(Math.random() * 6) + 1
      
          switch(rndInt2){ 
-           case 1:  msg.reply("heyyy");return;
-           case 2:  msg.reply("yooo"); return;
-           case 3:  msg.reply("hiii"); return;
-           case 4:  msg.reply("ssup"); return;
-           case 5:  msg.reply("hiii"); return;
+           case 1:  msg.reply("🤵‍♀️");return;
+           case 2:  msg.reply("whats crackin"); return;
+           case 3:  msg.reply("hugzz )"); return;
+           case 4:  msg.reply("howz life 🤵‍♀️🚬 🐇"); return;
+           case 5:  msg.reply("hi babe"); return;
+           case 6:  msg.reply("🤵‍♀️🚬  HEY"); return;
+           
          }
          return;
        }
