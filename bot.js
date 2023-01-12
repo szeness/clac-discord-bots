@@ -294,12 +294,7 @@ client.on('messageCreate', (msg) => {
 client.on("messageCreate", async (msg) => {
 
   
-
   arraymsg[iArray++] =  await msg.id;
-
- 
- 
-
 
     if (msg.author.id === '1049469270674911294') return;
 

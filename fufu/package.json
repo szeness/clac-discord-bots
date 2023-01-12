@@ -1,0 +1,11 @@
+{
+  "name": "fufu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "fufubot.js",
+  "scripts": {
+    "test": "node fufubot.js"
+  },
+  "author": "lac",
+  "license": "ISC"
+}
